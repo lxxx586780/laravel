@@ -12,7 +12,7 @@
  </head>
  <body>
  {{--id 为 app与 app.js中const app = new Vue({el: '#app',<<=【这个一致】});--}}
-<div><h1>ACD</h1></div>
+<div><h1>我是index.blade.php页面的组成部分</h1></div>
 <div id="app">
    
 
