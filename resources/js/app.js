@@ -14,8 +14,11 @@ import 'element-ui/lib/theme-chalk/index.css';
 Vue.use(ElementUI);
 //App为首页，确定谁的vue当主页，
 //再通过laravel的MCV结果的View页面index.blade.php中<index-component></index-component>
-//链接Vue.component('index-component',require('./src/index.vue').default)的默认页，
+//链接下面的Vue.component('index-component',require('./src/index.vue').default)的默认页，
 //就搭建起了关联，形成了一个完整的vue的vue-router和页面的展示。
+//尽量不要改变APP from app.vue，这个会产生不正常的逻辑，至于为什么还没有想明白0828
+//就上面这句话，是可以操作的。关键是用好 <router-view></router-view>这个显示组件，
+//不然会重复出现。
 //import App from './App.vue';
 import App from './src/index.vue';
 import router from './router.js';
@@ -35,6 +38,8 @@ import router from './router.js';
 
 //Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('index-component',require('./src/index.vue').default)
+//Vue.component('index-component',require('./App.vue').default)
+
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

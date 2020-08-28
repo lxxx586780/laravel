@@ -3567,6 +3567,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -3600,7 +3609,67 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/phone/phone.vue?vue&type=script&lang=js&":
+/*!***************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/phone/phone.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      aboutMsg: '我是phone组件'
+    };
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/user.vue?vue&type=script&lang=js&":
+/*!********************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/user.vue?vue&type=script&lang=js& ***!
+  \********************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      dynamicSegment: ''
+    };
+  },
+  watch: {
+    $route: function $route(to, from) {
+      // to表示的是你要去的那个组件，from 表示的是你从哪个组件过来的，它们是两个对象，你可以把它打印出来，它们也有一个param 属性
+      console.log(to);
+      console.log(from);
+      this.dynamicSegment = to.params.id;
+    }
+  }
+});
 
 /***/ }),
 
@@ -100078,11 +100147,39 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("h1", [_vm._v("home")]),
-    _vm._v(" "),
-    _c("p", [_vm._v(_vm._s(_vm.msg))])
-  ])
+  return _c(
+    "div",
+    [
+      _c("h1", [_vm._v("home")]),
+      _vm._v(" "),
+      _c("p", [_vm._v(_vm._s(_vm.msg))]),
+      _vm._v(" "),
+      _c(
+        "p",
+        [
+          _c("router-link", { attrs: { to: "/home/phone" } }, [_vm._v("手机")]),
+          _vm._v(" "),
+          _c("router-link", { attrs: { to: "/home/tablet" } }, [
+            _vm._v("平板")
+          ]),
+          _vm._v(" "),
+          _c("router-link", { attrs: { to: "/home/computer" } }, [
+            _vm._v("电脑")
+          ]),
+          _vm._v(" "),
+          _c(
+            "router-link",
+            { attrs: { to: { name: "user", params: { userId: 456 } } } },
+            [_vm._v("User")]
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c("router-view")
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -100110,31 +100207,86 @@ var render = function() {
     "div",
     { attrs: { id: "app" } },
     [
+      _c("h2", [_vm._v("我是index.vue页面，也就是VUE的初始页面")]),
+      _vm._v(" "),
       _c(
         "header",
         [
           _c("router-link", { attrs: { to: "/home" } }, [_vm._v("Home")]),
           _vm._v(" "),
-          _c("router-link", { attrs: { to: "/about" } }, [_vm._v("About")])
+          _c("router-link", { attrs: { to: "/about" } }, [_vm._v("About")]),
+          _vm._v(" "),
+          _c("router-link", { attrs: { to: "/user/123" } }, [
+            _vm._v("User123")
+          ]),
+          _vm._v(" "),
+          _c("router-link", { attrs: { to: "/user/456" } }, [_vm._v("User456")])
         ],
         1
       ),
-      _vm._v(" "),
-      _vm._m(0),
       _vm._v(" "),
       _c("router-view")
     ],
     1
   )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", [_c("h1", [_vm._v("ACBBBBB")])])
-  }
-]
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/phone/phone.vue?vue&type=template&id=af249658&":
+/*!*******************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/phone/phone.vue?vue&type=template&id=af249658& ***!
+  \*******************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c("h1", [_vm._v("phone")]),
+    _vm._v(" "),
+    _c("p", [_vm._v(_vm._s(_vm.aboutMsg))])
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/user.vue?vue&type=template&id=7bac66d8&":
+/*!************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/src/user.vue?vue&type=template&id=7bac66d8& ***!
+  \************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c("h1", [_vm._v("User")]),
+    _vm._v(" "),
+    _c("div", [_vm._v("我是user组件, 动态部分是" + _vm._s(_vm.dynamicSegment))])
+  ])
+}
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -115396,8 +115548,11 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
 
 Vue.use(element_ui__WEBPACK_IMPORTED_MODULE_0___default.a); //App为首页，确定谁的vue当主页，
 //再通过laravel的MCV结果的View页面index.blade.php中<index-component></index-component>
-//链接Vue.component('index-component',require('./src/index.vue').default)的默认页，
+//链接下面的Vue.component('index-component',require('./src/index.vue').default)的默认页，
 //就搭建起了关联，形成了一个完整的vue的vue-router和页面的展示。
+//尽量不要改变APP from app.vue，这个会产生不正常的逻辑，至于为什么还没有想明白0828
+//就上面这句话，是可以操作的。关键是用好 <router-view></router-view>这个显示组件，
+//不然会重复出现。
 //import App from './App.vue';
 
 
@@ -115413,7 +115568,8 @@ Vue.use(element_ui__WEBPACK_IMPORTED_MODULE_0___default.a); //App为首页，确
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 //Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 
-Vue.component('index-component', __webpack_require__(/*! ./src/index.vue */ "./resources/js/src/index.vue")["default"]);
+Vue.component('index-component', __webpack_require__(/*! ./src/index.vue */ "./resources/js/src/index.vue")["default"]); //Vue.component('index-component',require('./App.vue').default)
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -115489,11 +115645,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
-/* harmony import */ var _src_index_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./src/index.vue */ "./resources/js/src/index.vue");
-/* harmony import */ var _src_home_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./src/home.vue */ "./resources/js/src/home.vue");
-/* harmony import */ var _src_about_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./src/about.vue */ "./resources/js/src/about.vue");
+/* harmony import */ var _src_home_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./src/home.vue */ "./resources/js/src/home.vue");
+/* harmony import */ var _src_about_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./src/about.vue */ "./resources/js/src/about.vue");
+/* harmony import */ var _src_user_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./src/user.vue */ "./resources/js/src/user.vue");
+/* harmony import */ var _src_phone_phone_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./src/phone/phone.vue */ "./resources/js/src/phone/phone.vue");
 
  //import index from './components/ExampleComponent.vue';
+//import index from './src/index.vue';
+
 
 
 
@@ -115502,19 +115661,41 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
 
 /* harmony default export */ __webpack_exports__["default"] = (new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
   saveScrollPosition: true,
-  routes: [{
-    name: 'index',
-    path: '/index',
-    // component: resolve => void (require(['./components/ExampleComponent.vue'], resolve)),
-    component: _src_index_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
-  }, {
+  routes: [// //重定向首页
+  // {
+  //     name: '/',
+  //     path: '/',
+  //     redirect: '/home'
+  // },
+  // {
+  //     name: 'index',
+  //     path: '/index',
+  //     // component: resolve => void (require(['./components/ExampleComponent.vue'], resolve)),
+  //     component: index
+  // },
+  {
     name: 'home',
     path: '/home',
-    component: _src_home_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
+    component: _src_home_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
+    children: [// 当进入到home时，下面的组件显示
+    // {
+    //     path: "",
+    //     component: phone
+    // },
+    {
+      name: 'phone',
+      path: 'phone',
+      component: _src_phone_phone_vue__WEBPACK_IMPORTED_MODULE_5__["default"]
+    }]
   }, {
     name: 'about',
     path: '/about',
-    component: _src_about_vue__WEBPACK_IMPORTED_MODULE_4__["default"]
+    component: _src_about_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
+  }, //user组件测试
+  {
+    name: 'user',
+    path: '/user/:id',
+    component: _src_user_vue__WEBPACK_IMPORTED_MODULE_4__["default"]
   }]
 }));
 
@@ -115727,6 +115908,144 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/src/phone/phone.vue":
+/*!******************************************!*\
+  !*** ./resources/js/src/phone/phone.vue ***!
+  \******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _phone_vue_vue_type_template_id_af249658___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./phone.vue?vue&type=template&id=af249658& */ "./resources/js/src/phone/phone.vue?vue&type=template&id=af249658&");
+/* harmony import */ var _phone_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./phone.vue?vue&type=script&lang=js& */ "./resources/js/src/phone/phone.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _phone_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _phone_vue_vue_type_template_id_af249658___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _phone_vue_vue_type_template_id_af249658___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/src/phone/phone.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/src/phone/phone.vue?vue&type=script&lang=js&":
+/*!*******************************************************************!*\
+  !*** ./resources/js/src/phone/phone.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_phone_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./phone.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/phone/phone.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_phone_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/src/phone/phone.vue?vue&type=template&id=af249658&":
+/*!*************************************************************************!*\
+  !*** ./resources/js/src/phone/phone.vue?vue&type=template&id=af249658& ***!
+  \*************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_phone_vue_vue_type_template_id_af249658___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./phone.vue?vue&type=template&id=af249658& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/phone/phone.vue?vue&type=template&id=af249658&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_phone_vue_vue_type_template_id_af249658___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_phone_vue_vue_type_template_id_af249658___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/src/user.vue":
+/*!***********************************!*\
+  !*** ./resources/js/src/user.vue ***!
+  \***********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _user_vue_vue_type_template_id_7bac66d8___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./user.vue?vue&type=template&id=7bac66d8& */ "./resources/js/src/user.vue?vue&type=template&id=7bac66d8&");
+/* harmony import */ var _user_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./user.vue?vue&type=script&lang=js& */ "./resources/js/src/user.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _user_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _user_vue_vue_type_template_id_7bac66d8___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _user_vue_vue_type_template_id_7bac66d8___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/src/user.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/src/user.vue?vue&type=script&lang=js&":
+/*!************************************************************!*\
+  !*** ./resources/js/src/user.vue?vue&type=script&lang=js& ***!
+  \************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_user_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./user.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/user.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_user_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/src/user.vue?vue&type=template&id=7bac66d8&":
+/*!******************************************************************!*\
+  !*** ./resources/js/src/user.vue?vue&type=template&id=7bac66d8& ***!
+  \******************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_user_vue_vue_type_template_id_7bac66d8___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./user.vue?vue&type=template&id=7bac66d8& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/src/user.vue?vue&type=template&id=7bac66d8&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_user_vue_vue_type_template_id_7bac66d8___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_user_vue_vue_type_template_id_7bac66d8___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/sass/app.scss":
 /*!*********************************!*\
   !*** ./resources/sass/app.scss ***!
@@ -115745,8 +116064,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\xampp\htdocs\laravel\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\laravel\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! D:\laravel0827\laravel\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! D:\laravel0827\laravel\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

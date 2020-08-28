@@ -8,11 +8,11 @@
      {{--  防止CSRF攻击 可以赋值给ajax header 如果是form中直接使用@csrf即可 --}}
      <meta name="csrf-token" content="{{ csrf_token() }}">
      <link rel="stylesheet" href="{{ mix('css/app.css') }}">
-     <title>Document</title>
+     <title>我是laravel的blade首页</title>
  </head>
  <body>
  {{--id 为 app与 app.js中const app = new Vue({el: '#app',<<=【这个一致】});--}}
-<div><h1>ACD</h1></div>
+<div><h1>我是index.blade.php页面的组成部分</h1></div>
 <div id="app">
    
 

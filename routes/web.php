@@ -20,7 +20,12 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
 //自己建立的。
+// Route::get('/', function () {
+//     return view('index');
+// });
+
 Route::get('/index', function () {
     return view('index');
 });
