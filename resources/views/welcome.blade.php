@@ -81,10 +81,11 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    欢迎您的使用，请开始吧！
                 </div>
 
                 <div class="links">
+                    <a href="login">登录</a>
                     <a href="https://laravel.com/docs">Docs</a>
                     <a href="https://laracasts.com">Laracasts</a>
                     <a href="https://laravel-news.com">News</a>
